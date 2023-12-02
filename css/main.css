@@ -1,0 +1,158 @@
+.nav-logo{
+    width: 100%;
+}
+
+.link-logo{
+    width: 2%;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem auto;
+    width: 70%;
+}
+
+.nav-link{
+    color: blue;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+.line{
+    background-color: black;
+    height: .08rem;
+    margin-bottom: 2rem;
+}
+
+.selects{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.subFiltro{
+    display: flex;
+    flex-direction: column;
+}
+
+.lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.div-view{
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 1.7rem;
+    margin: 2%;
+    padding: 1rem;
+    width: 25%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 40%;
+}
+
+label{
+    margin-bottom: .3rem;
+}
+
+input{
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    padding: .3rem;
+}
+
+.view{
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.radios{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.div-radio{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio{
+    display: flex;
+    justify-content: center;
+    width: 1.3rem;
+}
+
+button{
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    padding: .6rem;
+}
+
+select{
+    height: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.label-radios{
+    margin: 1rem 0 2rem;
+    text-align: center;
+}
+
+textarea{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    resize: none;
+}
+
+.jogo-qtd{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.jogo{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+}
+
+.qtd{
+    align-items: center;
+    display: flex;
+    flex-direction: column;   
+}
+
+.select-jogo{
+    width: 130%;
+}
+
+.sell-qtd{
+    width: 20%;
+}

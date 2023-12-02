@@ -1,20 +1,14 @@
+import { GerenteModel } from "../model/GerenteModel.js";
+import { indexaNav } from "../utils/utils.js";
 import { UsuarioController } from "./UsuarioController.js";
 
-export class gerenteController extends UsuarioController{
-    constructor(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao){
-        super(codigo, nome, cpf, rg, dataNasc, end, cep, email);
-        this._salario = salario;
-        this._pis = pis;
-        this._admissao = admissao;
-    }
+const arrayObjs = [];
 
-    get salario(){
-        return this._salario;
-    }
-    get pis(){
-        return this._pis;
-    }
-    get admissao(){
-        return this._admissao;
+export class GerenteController extends UsuarioController{
+    cadastrarGerente(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao){
+        const model = new GerenteModel(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao);
+        const obj = model.criaObj();
+        arrayObjs.push(obj);
+        indexaNav(arrayObjs);
     }
 }

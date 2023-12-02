@@ -1,4 +1,4 @@
-import { ClienteController } from "../controller/ClienteController.js";
+import { clienteController, gerenteController } from "./utils.js";
 
 const viewCliente = document.querySelector('.viewCliente');
 const viewGerente = document.querySelector('.viewGerente');
@@ -45,7 +45,13 @@ botao.addEventListener("click", () => {
         const nivel = document.querySelector('.user-level').value;
         const clienteEpico = document.querySelector('.user-epic').checked;
         
-        const novoCliente = new ClienteController();
-        novoCliente.cadastroCliente(codigo, nome, cpf, rg, dataNasc, endereco, cep, email, cadastro, nivel, clienteEpico);
+        clienteController.cadastroCliente(codigo, nome, cpf, rg, dataNasc, endereco, cep, email, cadastro, nivel, clienteEpico);
+    }
+    if(radioGerente.checked){
+        const salario = document.querySelector('.user-salario').value;
+        const pis = document.querySelector('.user-pis').value;
+        const admissao = document.querySelector('.user-admissao').value;
+        
+        gerenteController.cadastrarGerente(codigo, nome, cpf, rg, dataNasc, endereco, cep, email, salario, pis, admissao);
     }
 });
