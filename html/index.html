@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header-nav">
+            <a class="nav-link link-logo" href="./index.html">
+                <img class="nav-logo" src="../img/25694.png" alt="Ícone de casa para voltar ao início da página" />
+            </a>
+            <a class="nav-link" href="./cadastroUsuario.html">Cadastrar usuário</a>
+            <a class="nav-link" href="./cadastroDesenvolvedora.html">Cadastrar Desenvolvedora</a>
+            <a class="nav-link" href="./cadastroJogo.html">Cadastrar jogo</a>
+            <a class="nav-link" href="./cadastroTransportadora.html">Cadastrar transportadora</a>
+            <a class="nav-link" href="./venda.html">Realizar venda</a>
+        </nav>
+
+        <div class="line"></div>
+    </header>
+
+    <main class="main">
+        <div class="selects">
+            <div class="view-subFiltro subFiltro">
+                <h3 class="filtros-title">Filtros</h3>
+
+                <select class="select-filtro" name="filtro">
+                    <option value="" disabled selected style="display:none;">Selecione um filtro</option>
+                    <option value="desenvolvedora" class="option-dev">Desenvolvedoras</option>
+                    <option value="transportadora" class="option-dev">Transportadoras</option>
+                    <option value="jogo" class="option-dev">Jogos</option>
+                    <option value="gerente" class="option-dev">Gerentes</option>
+                    <option value="cliente" class="option-dev">Clientes</option>
+                    <option value="venda" class="option-dev">Vendas</option>
+                </select>
+            </div>
+    
+            <div class="view-subFiltro__dev subFiltro">
+                <h3 class="filtros-subtitle">Desenvolvedoras</h4>
+    
+                <select class="select-dev" name="dev">
+                    <option value="" disabled selected style="display:none;">Selecione um filtro</option>
+                    <option value="todos" class="option-dev">Todas</option>
+                    <option value="maisVendas" class="option-dev">Mais vendas</option>
+                    <option value="maisLucro" class="option-dev">Maior lucro</option>
+                </select>
+            </div>
+    
+            <div class="view-subFiltro__jogos subFiltro">
+                <h3 class="filtros-subtitle">Jogos</h4>
+    
+                <select class="select-games" name="games">
+                    <option value="" disabled selected style="display:none;">Selecione um filtro</option>
+                    <option value="todos" class="option-games">Todos</option>
+                    <option value="acao" class="option-games">Ação</option>
+                    <option value="aventura" class="option-games">Aventura</option>
+                    <option value="rpg" class="option-games">RPG</option>
+                    <option value="esporte" class="option-games">Esporte</option>
+                    <option value="corrida" class="option-games">Corrida</option>
+                    <option value="maisCaros" class="option-games">Maior preço</option>
+                    <option value="maisBaratos" class="option-games">Menor preço</option>
+                    <option value="avaliacao+" class="option-games">Maior avaliação</option>
+                    <option value="avaliacao-" class="option-games">Menor avaliação</option>
+                </select>
+            </div>
+    
+            <div class="view-subFiltro__cliente subFiltro">
+                <h3 class="filtros-subtitle">Clientes</h4>
+    
+                <select class="select-clientes" name="cliente">
+                    <option value="" disabled selected style="display:none;">Selecione um filtro</option>
+                    <option value="todos" class="option-cliente">Todos</option>
+                    <option value="epicos" class="option-cliente">Clientes épicos</option>
+                    <option value="nivel" class="option-cliente">Maior nível</option>
+                </select>
+            </div>
+
+            <div class="view-subFiltro__vendas subFiltro">
+                <h3 class="filtros-subtitle">Vendas</h4>
+    
+                <select class="select-vendas" name="vendas">
+                    <option value="" disabled selected style="display:none;">Selecione um filtro</option>
+                    <option value="todos" class="option-vendas">Todas</option>
+                    <option value="boleto" class="option-vendas">Boleto</option>
+                    <option value="cartao" class="option-vendas">Cartão</option>
+                    <option value="pix" class="option-vendas">Pix</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="lista"></div>
+    </main>
+
+    <script src="../js/utils/indexUtils.js" type="module"></script>
+</body>
+
+</html>

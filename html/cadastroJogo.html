@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Jogo</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <header class="header" style="text-align: center;">
+        <nav class="header-nav">
+            <a class="nav-link link-logo" href="./index.html">
+                <img class="nav-logo" src="../img/25694.png" alt="Ícone de casa para voltar ao início da página" />
+            </a>
+            <a class="nav-link" href="./cadastroUsuario.html">Cadastrar usuário</a>
+            <a class="nav-link" href="./cadastroDesenvolvedora.html">Cadastrar Desenvolvedora</a>
+            <a class="nav-link" href="#">Cadastrar jogo</a>
+            <a class="nav-link" href="./cadastroTransportadora.html">Cadastrar transportadora</a>
+            <a class="nav-link" href="./venda.html">Realizar venda</a>
+        </nav>
+
+        <div class="line"></div>
+
+        <h2 class="title">Cadastro de Jogo</h2>
+    </header>
+
+    <form method="get" class="game-form">
+        <label class="label-code">Código</label>
+        <input class="game-code" type="number" required />
+
+        <label class="label-name">Nome</label>
+        <input class="game-name" type="text" required />
+
+        <label class="label-descricao">Descrição</label>
+        <textarea class="game-descricao" rows="3" required></textarea>
+
+        <label for="devs" class="label-dev">Desenvolvedora</label>
+        <select class="select-dev" name="devs">
+            <option value="" disabled selected style="display:none;">Selecione uma desenvolvedora</option>
+        </select>
+
+        <label class="label-date">Data de lançamento</label>
+        <input class="game-date" type="date" required />
+
+        <label class="label-value">Valor</label>
+        <input class="game-value" type="number" required />
+
+        <label class="label-minset">Requisítos mínimos</label>
+        <textarea class="game-minset" rows="5" required></textarea>
+
+        <label class="label-nota">Avaliação</label>
+        <input class="game-nota" type="number" required />
+
+        <label class="label-genero">Gênero</label>
+        <select class="select-genero">
+            <option value="" disabled selected style="display:none;">Selecione um gênero</option>
+            <option value="Ação">Ação</option>
+            <option value="Aventura">Aventura</option>
+            <option value="RPG">RPG</option>
+            <option value="Esporte">Esporte</option>
+            <option value="Corrida">Corrida</option>
+        </select>
+
+        <button class="botao-submit botao" type="submit">Cadastrar jogo</button>
+    </form>
+
+    <script src="../js/utils/gameUtils.js" type="module"></script>
+</body>
+
+</html>

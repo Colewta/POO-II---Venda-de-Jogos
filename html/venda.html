@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <header class="header" style="text-align: center;">
+        <nav class="header-nav">
+            <a class="nav-link link-logo" href="./index.html">
+                <img class="nav-logo" src="../img/25694.png" alt="Ícone de casa para voltar ao início da página" />
+            </a>
+            <a class="nav-link" href="./cadastroUsuario.html">Cadastrar usuário</a>
+            <a class="nav-link" href="./cadastroDesenvolvedora.html">Cadastrar Desenvolvedora</a>
+            <a class="nav-link" href="./cadastroJogo.html">Cadastrar jogo</a>
+            <a class="nav-link" href="./cadastroTransportadora.html">Cadastrar transportadora</a>
+            <a class="nav-link" href="#">Realizar venda</a>
+        </nav>
+
+        <div class="line"></div>
+
+        <h2 class="title">Cadastro de venda</h2>
+    </header>
+
+    <form method="get" class="sell-form">
+        <label class="label-code">Código</label>
+        <input class="sell-code" type="number" required />
+
+        <label class="label-cliente" for="clientes">Cliente</label>
+        <select class="select-cliente" name="clientes">
+            <option value="" disabled selected style="display:none;">Selecione um cliente</option>
+        </select>
+
+        <label class="label-gerente" for="gerente">Gerente</label>
+        <select class="select-gerente" name="gerente">
+            <option value="" disabled selected style="display:none;">Selecione um gerente</option>
+        </select>
+
+        <label class="label-date">Data da venda</label>
+        <input class="sell-date" type="date" required />
+
+        <label class="label-ltda" for="ltda">Transportadora</label>
+        <select class="select-ltda" name="ltda">
+            <option value="" disabled selected style="display:none;">Selecione uma transportadora</option>
+        </select>
+
+        <label class="label-entrega">Data de entrega</label>
+        <input class="sell-entrega" type="date" disabled />
+
+        <div class="jogo-qtd">
+            <div class="jogo">
+                <label class="label-jogo" for="jogo">Jogo</label>
+                <select class="select-jogo" name="jogo">
+                    <option value="" disabled selected style="display:none;">Selecione um jogo</option>
+                </select>
+            </div>
+
+            <div class="qtd">
+                <label class="label-qtd">Quantidade</label>
+                <input value="0" class="sell-qtd" type="number" required />
+            </div>
+        </div>
+
+        <label class="label-fisico" style="text-align: center;">Itens físicos?</label>
+        <input class="sell-fisico" type="checkbox" />
+
+        <label class="label-valor">Valor total</label>
+        <input class="sell-valor" type="text" disabled placeholder="R$" />
+
+        <label class="label-desconto">Valor com desconto</label>
+        <input class="sell-desconto" type="text" disabled placeholder="R$" />
+
+        <label class="label-radios">Modalidade de pagamento</label>
+        <div class="radios">
+            <div class="div-radio">
+                <label class="label-radio">Boleto</label>
+                <input type="radio" name="forma-pagamento" class="boleto radio">
+            </div>
+            
+            <div class="div-radio">
+                <label class="label-radio">Cartão</label>
+                <input type="radio" name="forma-pagamento" class="cartao radio">
+            </div>
+
+            <div class="div-radio">
+                <label class="label-radio">Pix</label>
+                <input type="radio" name="forma-pagamento" class="pix radio">
+            </div>
+        </div>
+
+        <div class="viewBoleto view">
+            <label class="label-numero">Número do boleto</label>
+            <input class="boleto-numero" type="number" />
+        </div>
+
+        <div class="viewCartao view">
+            <label class="label-nome">Nome cartão</label>
+            <input class="card-nome" type="text" />
+
+            <label class="label-bandeira">Bandeira</label>
+            <input class="card-bandeira" type="text" />
+
+            <label class="label-card__number">Número do cartão</label>
+            <input class="card-number" type="number" />
+
+            <label class="label-card__code">Código de segurança</label>
+            <input class="card-code" type="number" />
+
+            <div class="radios">
+                <div class="div-radio">
+                    <label class="label-radio">Crédito</label>
+                    <input type="radio" name="forma-cartao" class="credito radio">
+                </div>
+    
+                <div class="div-radio">
+                    <label class="label-radio">Débito</label>
+                    <input type="radio" name="forma-cartao" class="debito radio">
+                </div>
+            </div>
+        </div>
+
+        <div class="viewPix view">
+            <label class="label-codigo__pix">Código pix</label>
+            <input class="codigo-pix" type="number" />
+        </div>
+
+        <button class="botao-submit botao" type="submit">Realizar venda</button>
+    </form>
+
+    <script src="../js/utils/utils.js" type="module"></script>
+    <script src="../js/utils/vendaUtils.js" type="module"></script>
+</body>
+
+</html>

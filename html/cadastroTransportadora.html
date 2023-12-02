@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de trasnportadora</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <header class="header" style="text-align: center;">
+        <nav class="header-nav">
+            <a class="nav-link link-logo" href="./index.html">
+                <img class="nav-logo" src="../img/25694.png" alt="Ícone de casa para voltar ao início da página" />
+            </a>
+            <a class="nav-link" href="./cadastroUsuario.html">Cadastrar usuário</a>
+            <a class="nav-link" href="./cadastroDesenvolvedora.html">Cadastrar Desenvolvedora</a>
+            <a class="nav-link" href="./cadastroJogo.html">Cadastrar jogo</a>
+            <a class="nav-link" href="#">Cadastrar transportadora</a>
+            <a class="nav-link" href="./venda.html">Realizar venda</a>
+        </nav>
+
+        <div class="line"></div>
+
+        <h2 class="title">Cadastro de trasnportadora</h2>
+    </header>
+
+    <form method="get" class="ltda-form">
+        <label class="label-code">Código</label>
+        <input class="ltda-code" type="number" required />
+
+        <label class="label-name">Nome</label>
+        <input class="ltda-name" type="text" required />
+
+        <label class="label-cnpj">CNPJ</label>
+        <input class="ltda-cnpj" type="number" required />
+
+        <label class="label-email">E-mail</label>
+        <input class="ltda-email" type="email" required />
+
+        <label class="label-phone">Telefone</label>
+        <input class="ltda-phone" type="number" required />
+
+        <label class="label-end">Endereço</label>
+        <input class="ltda-end" type="text" required />
+
+        <label class="label-time">Tempo de entrega</label>
+        <input class="ltda-time" type="number" required />
+        
+        <button class="botao-submit botao" type="submit">Cadastrar trasnportadora</button>
+    </form>
+
+    <script src="../js/utils/ltdaUtils.js" type="module"></script>
+</body>
+
+</html>

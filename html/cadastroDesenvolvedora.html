@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Desenvolvedora</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <header class="header" style="text-align: center;">
+        <nav class="header-nav">
+            <a class="nav-link link-logo" href="./index.html">
+                <img class="nav-logo" src="../img/25694.png" alt="Ícone de casa para voltar ao início da página" />
+            </a>
+            <a class="nav-link" href="./cadastroUsuario.html">Cadastrar usuário</a>
+            <a class="nav-link" href="#">Cadastrar Desenvolvedora</a>
+            <a class="nav-link" href="./cadastroJogo.html">Cadastrar jogo</a>
+            <a class="nav-link" href="./cadastroTransportadora.html">Cadastrar transportadora</a>
+            <a class="nav-link" href="./venda.html">Realizar venda</a>
+        </nav>
+
+        <div class="line"></div>
+
+        <h2 class="title">Cadastro de Desenvolvedora</h2>
+    </header>
+
+    <form method="get" class="dev-form">
+        <label class="label-code">Código</label>
+        <input class="dev-code" type="number" required />
+
+        <label class="label-name">Nome</label>
+        <input class="dev-name" type="text" required />
+
+        <label class="label-cnpj">CNPJ</label>
+        <input class="dev-cnpj" type="number" required />
+
+        <label class="label-email">E-mail</label>
+        <input class="dev-email" type="email" required />
+
+        <label class="label-site">Website</label>
+        <input class="dev-site" type="text" required />
+
+        <label class="label-end">Endereço</label>
+        <input class="dev-end" type="text" required />
+
+        <label class="label-rede">Rede Social</label>
+        <input class="dev-rede" type="text" required />
+
+        <button class="botao-submit botao" type="submit">Cadastrar desenvolvedora</button>
+    </form>
+
+    <script src="../js/utils/devUtils.js" type="module"></script>
+</body>
+
+</html>
