@@ -66,8 +66,8 @@ export const criaDiv = () => {
 }
 
 export const limpaView = lista => {
-    for(let j = 0; j < lista.children.length; j++){
-        lista.removeChild(lista.children[j]);
+    while(lista.firstChild){
+        lista.removeChild(lista.firstChild);
     }
 }
 
