@@ -1,5 +1,7 @@
 export class GameModel{
-    constructor(codigo, nome, descricao, desenvolvedora, lancamento, valor, requisitos, avaliacao, genero, disponivel){
+    constructor(vendas, valorVendido, codigo, nome, descricao, desenvolvedora, lancamento, valor, requisitos, avaliacao, genero, disponivel, tipo){
+        this._vendas = vendas;
+        this._valorVendido = valorVendido;
         this._codigo = codigo;
         this._nome = nome;
         this._descricao = descricao;
@@ -10,6 +12,7 @@ export class GameModel{
         this._avaliacao = avaliacao;
         this._genero = genero;
         this._disponivel = disponivel;
+        this._tipo = tipo;
     }
 
     get codigo(){
@@ -39,25 +42,10 @@ export class GameModel{
     get genero(){
         return this._genero;
     }
-    get disponivel(){
+    get estaDisponivel(){
         return this._disponivel;
     }
-
-    criaObj(){
-        const obj = {
-            codigo: this._codigo,
-            nome: this._nome,
-            descricao: this._descricao,
-            desenvolvedora: this._desenvolvedora,
-            lancamento: this._lancamento,
-            valor: this._valor,
-            requisitos: this._requisitos,
-            avaliacao: this._avaliacao,
-            genero: this._genero,
-            disponivel: this.disponivel,
-            tipo: 'jogo'
-        }
-
-        return obj;
+    get tipo(){
+        return this._tipo;
     }
 }

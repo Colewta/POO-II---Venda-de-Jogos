@@ -1,13 +1,32 @@
+import { FactoryIndexamento } from "../model/FactoryIndexamento.js";
+import { GamesView } from "../view/GamesView.js";
 import { GameModel } from "../model/GameModel.js";
-import { indexaNav } from "../utils/utils.js";
 
-const arrayObjs = [];
+export class GameController {
+    constructor() {
+        this._view = new GamesView(this._cadastrarGame.bind(this));
+        this._view.inicializar();
+    }
 
-export class GameController{
-    cadastrarGame(codigo, nome, descricao, desenvolvedora, lancamento, valor, requisitos, avaliacao, genero, disponivel){
-        const model = new GameModel(codigo, nome, descricao, desenvolvedora, lancamento, valor, requisitos, avaliacao, genero, disponivel);
-        const obj = model.criaObj();
-        arrayObjs.push(obj);
-        indexaNav(arrayObjs);
+    _cadastrarGame(gameData) {
+        const novoGame = new GameModel(
+            gameData.vendas,
+            gameData.valorVendido,
+            gameData.codigo,
+            gameData.nome,
+            gameData.descricao,
+            gameData.desenvolvedora,
+            gameData.lancamento,
+            gameData.valor,
+            gameData.requisitos,
+            gameData.avaliacao,
+            gameData.genero,
+            gameData.disponivel,
+            gameData.tipo
+        );
+        
+        new FactoryIndexamento(novoGame);
     }
 }
+
+new GameController();

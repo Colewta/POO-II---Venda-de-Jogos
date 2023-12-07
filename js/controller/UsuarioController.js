@@ -1,37 +1,106 @@
-export class UsuarioController{
-    constructor(codigo, nome, cpf, rg, dataNasc, end, cep, email){
-        this._codigo = codigo;
-        this._nome = nome;
-        this._cpf = cpf;
-        this._rg = rg;
-        this._dataNasc = dataNasc;
-        this._end = end;
-        this._cep = cep;
-        this._email = email;
+import { ClienteModel } from "../model/ClienteModel.js";
+import { GerenteModel } from "../model/GerenteModel.js";
+import { ClienteView } from "../view/ClienteView.js";
+import { GerenteView } from "../view/GerenteView.js";
+import { UsuarioView } from "../view/UsuarioView.js";
+import { FactoryIndexamento } from "../model/FactoryIndexamento.js";
+
+export class UsuarioController {
+    constructor() {
+        this._botaoUsuario = document.querySelector('.botao-user');
+        this._radios = document.querySelector('.radios');
+        this._nivel = document.querySelector('.user-level');
+
+        this._clienteView = new ClienteView(this._cadastrarCliente.bind(this));
+        this._gerenteView = new GerenteView(this._cadastrarGerente.bind(this));
+
+        this._inputCliente = document.querySelector('.cliente');
+        this._inputGerente = document.querySelector('.gerente');
+
+        this._usuarioView = new UsuarioView();
+
+        this._inicializar();
     }
 
-    get codigo(){
-        return this._codigo;
+    _inicializar() {
+        this._usuarioView._arrumaFormulario();
+        this._radios.addEventListener("change", this._usuarioView._atualizaFormulario);
+        this._nivel.addEventListener("change", this._usuarioView._atualizaFormulario);
+
+        this._botaoUsuario.addEventListener("click", () => {
+            if(this._inputCliente.checked){
+                this._clienteView._getNovoCliente();
+            }
+            else if(this._inputGerente.checked){
+                this._gerenteView._getNovoGerente();
+            }
+        });
     }
-    get nome(){
-        return this._nome;
+
+    _novoCliente(cliente){
+        return new ClienteModel(cliente);
     }
-    get cpf(){
-        return this._cpf;
+
+    _novoGerente(gerente){
+        return new GerenteModel(gerente);
     }
-    get rg(){
-        return this._rg;
+
+    _cadastrarCliente(cliente){
+        const novoCliente = this._novoCliente(
+            cliente.codigo,
+            cliente.nome,
+            cliente.cpf,
+            cliente.rg,
+            cliente.dataNasc,
+            cliente.end,
+            cliente.cep,
+            cliente.email,
+            cliente.cadastro,
+            cliente.nivel,
+            cliente.epico,
+            cliente.tipo
+        );
+
+        new FactoryIndexamento(novoCliente);
     }
-    get dataNasc(){
-        return this._dataNasc;
+
+    _cadastrarGerente(gerente) {
+        const novoGerente = this._novoGerente(
+            gerente.codigo,
+            gerente.nome,
+            gerente.cpf,
+            gerente.rg,
+            gerente.dataNasc,
+            gerente.end,
+            gerente.cep,
+            gerente.email,
+            gerente.salario,
+            gerente.pis,
+            gerente.admissao,
+            gerente.tipo
+        );
+
+        new FactoryIndexamento(novoGerente);
     }
-    get end(){
-        return this._end;
+    
+    novoUsuario(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao, cadastro, nivel, clienteEpico, tipo){
+        if(tipo === 'cliente'){
+            return this._novoCliente(codigo, nome, cpf, rg, dataNasc, end, cep, email, cadastro, nivel, clienteEpico, tipo);
+        }
+        else if(tipo === 'gerente'){
+            return this._novoGerente(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao, tipo);
+        }
     }
-    get cep(){
-        return this._cep;
+
+    _novoCliente(codigo, nome, cpf, rg, dataNasc, end, cep, email, cadastro, nivel, clienteEpico, tipo){
+        const novoCliente = new ClienteModel(codigo, 0, nome, cpf, rg, dataNasc, end, cep, email, cadastro, nivel, clienteEpico, tipo);
+        return novoCliente;
     }
-    get email(){
-        return this._email;
+
+    _novoGerente(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao, tipo){
+        const novoGerente = new GerenteModel(codigo, 0, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao, tipo);
+        return novoGerente;
     }
 }
+
+new UsuarioController();

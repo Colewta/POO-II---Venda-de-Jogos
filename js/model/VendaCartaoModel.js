@@ -1,12 +1,11 @@
 export class VendaCartaoModel{
-    constructor(codigo, cliente, gerente, dataVenda, transportadora, dataEntrega, desenvolvedora, produto, quantidade, fisico, valorTotal, desconto, nomeCartao, bandeira, numeroCartao, codigoCartao, metodo){
+    constructor(codigo, cliente, gerente, dataVenda, transportadora, dataEntrega, produto, quantidade, fisico, valorTotal, desconto, nomeCartao, bandeira, numeroCartao, codigoCartao, metodo){
         this._codigo = codigo;
         this._cliente = cliente;
         this._gerente = gerente;
         this._dataVenda = dataVenda;
         this._transportadora = transportadora;
         this._dataEntrega = dataEntrega;
-        this._desenvolvedora = desenvolvedora;
         this._produto = produto;
         this._quantidade = quantidade;
         this._fisico = fisico;
@@ -36,9 +35,6 @@ export class VendaCartaoModel{
     }
     get dataEntrega(){
         return this._dataEntrega;
-    }
-    get desenvolvedora(){
-        return this._desenvolvedora;
     }
     get produto(){
         return this._produto;

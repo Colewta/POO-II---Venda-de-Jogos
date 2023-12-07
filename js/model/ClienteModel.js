@@ -1,6 +1,7 @@
 export class ClienteModel{
-    constructor(codigo, nome, cpf, rg, dataNasc, end, cep, email, cadastro, nivel, clienteEpico){
+    constructor(codigo, valorCompras, nome, cpf, rg, dataNasc, end, cep, email, cadastro, nivel, clienteEpico, tipo){
         this._codigo = codigo;
+        this._valorCompras = valorCompras;
         this._nome = nome;
         this._cpf = cpf;
         this._rg = rg;
@@ -11,10 +12,14 @@ export class ClienteModel{
         this._cadastro = cadastro;
         this._nivel = nivel;
         this._clienteEpico = clienteEpico;
+        this._tipo = tipo;
     }
 
     get codigo(){
         return this._codigo;
+    }
+    get valorCompras(){
+        return this._valorCompras;
     }
     get nome(){
         return this._nome;
@@ -46,23 +51,7 @@ export class ClienteModel{
     get clienteEpico(){
         return this._clienteEpico;
     }
-
-    criaObj(){
-        const obj = {
-            codigo: this._codigo,
-            nome: this._nome,
-            cpf: this._cpf,
-            rg: this._rg,
-            dataNascimento: this._dataNasc,
-            endereco: this._end,
-            cep: this._cep,
-            email: this._email,
-            cadastro: this._cadastro,
-            nivel: this._nivel,
-            epico: this._clienteEpico,
-            tipo: 'cliente'
-        }
-
-        return obj;
+    get tipo(){
+        return this._tipo;
     }
 }

@@ -1,6 +1,7 @@
 export class GerenteModel{
-    constructor(codigo, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao){
+    constructor(codigo, valorVendas, nome, cpf, rg, dataNasc, end, cep, email, salario, pis, admissao, tipo){
         this._codigo = codigo;
+        this._valorVendas = valorVendas;
         this._nome = nome;
         this._cpf = cpf;
         this._rg = rg;
@@ -11,10 +12,17 @@ export class GerenteModel{
         this._salario = salario;
         this._pis = pis;
         this._admissao = admissao;
+        this._tipo = tipo;
     }
     
     get codigo(){
         return this._codigo;
+    }
+    get valorVendas(){
+        return this._valorVendas;
+    }
+    set atualizaVendas(novoValor){
+        this._valorVendas = novoValor;
     }
     get nome(){
         return this._nome;
@@ -46,23 +54,7 @@ export class GerenteModel{
     get admissao(){
         return this._admissao;
     }
-
-    criaObj(){
-        const obj = {
-            codigo: this._codigo,
-            nome: this._nome,
-            cpf: this._cpf,
-            rg: this._rg,
-            dataNascimento: this._dataNasc,
-            endereco: this._end,
-            cep: this._cep,
-            email: this._email,
-            salario: this._salario,
-            pis: this._pis,
-            admissao: this._admissao,
-            tipo: 'gerente'
-        }
-
-        return obj;
+    get tipo(){
+        return this._tipo;
     }
 }

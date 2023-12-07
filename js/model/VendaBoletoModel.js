@@ -1,18 +1,19 @@
 export class VendaBoletoModel{
-    constructor(codigo, cliente, gerente, dataVenda, transportadora, dataEntrega, desenvolvedora, produto, quantidade, fisico, valorTotal, desconto, numeroBoleto){
+    constructor(codigo, cliente, gerente, dataVenda, transportadora, dataEntrega, produto, quantidade, fisico, valorTotal, desconto, numeroBoleto, tipo, tipo2){
         this._codigo = codigo;
         this._cliente = cliente;
         this._gerente = gerente;
         this._dataVenda = dataVenda;
         this._transportadora = transportadora;
         this._dataEntrega = dataEntrega;
-        this._desenvolvedora = desenvolvedora;
         this._produto = produto;
         this._quantidade = quantidade;
         this._fisico = fisico;
         this._valorTotal = valorTotal;
         this._desconto = desconto;
         this._numeroBoleto = numeroBoleto;
+        this._tipo = tipo;
+        this._tipo2 = tipo2;
     }
 
     get codigo(){
@@ -33,9 +34,6 @@ export class VendaBoletoModel{
     get dataEntrega(){
         return this._dataEntrega;
     }
-    get desenvolvedora(){
-        return this._desenvolvedora;
-    }
     get produto(){
         return this._produto;
     }
@@ -54,26 +52,10 @@ export class VendaBoletoModel{
     get numeroBoleto(){
         return this._numeroBoleto;
     }
-
-    criaObj(){
-        const obj = {
-            codigo: this._codigo,
-            cliente: this._cliente,
-            gerente: this._gerente,
-            dataVenda: this._dataVenda,
-            transportadora: this._transportadora,
-            dataEntrega: this._dataEntrega,
-            desenvolvedora: this._desenvolvedora,
-            produto: this._produto,
-            quantidade: this._quantidade,
-            fisico: this.fisico,
-            valorTotal: this._valorTotal,
-            desconto: this._desconto,
-            numeroBoleto: this._numeroBoleto,
-            tipo: 'venda-boleto',
-            tipo2: 'venda'
-        }
-
-        return obj;
+    get tipo(){
+        return this._tipo;
+    }
+    get tipo2(){
+        return this._tipo2;
     }
 }

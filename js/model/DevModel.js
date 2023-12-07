@@ -1,13 +1,15 @@
 export class DevModel{
-    constructor(codigo, nome, cnpj, email, site, endereco, redeSocial, numeroVendas){
+    constructor(codigo, numeroVendas, vendasTotais, nome, cnpj, email, site, endereco, redeSocial, tipo){
         this._codigo = codigo;
+        this._numeroVendas = numeroVendas;
+        this._vendasTotais = vendasTotais;
         this._nome = nome;
         this._cnpj = cnpj;
         this._email = email;
         this._site = site;
         this._endereco = endereco;
         this._redeSocial = redeSocial;
-        this._numeroVendas = numeroVendas;
+        this._tipo = tipo;
     }
 
     get codigo(){
@@ -34,23 +36,16 @@ export class DevModel{
     get numeroVendas(){
         return this._numeroVendas;
     }
-    set numeroVendas(novoNumero){
+    set atualizaVendas(novoNumero){
         this._numeroVendas = novoNumero;
     }
-
-    criaObj(){
-        const obj = {
-            codigo: this._codigo,
-            nome: this._nome,
-            cnpj: this._cnpj,
-            email: this._email,
-            site: this._site,
-            endereco: this._endereco,
-            redeSocial: this._redeSocial,
-            numeroVendas: this._numeroVendas,
-            tipo: 'desenvolvedora'
-        }
-
-        return obj;
+    get vendasTotais(){
+        return this._vendasTotais;
+    }
+    set atualizaTotais(novoTotal){
+        this._vendasTotais = novoTotal;
+    }
+    get tipo(){
+        return this._tipo;
     }
 }

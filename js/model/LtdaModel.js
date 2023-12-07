@@ -1,5 +1,5 @@
 export class LtdaModel{
-    constructor(codigo, nome, cnpj, email, telefone, endereco, entrega){
+    constructor(codigo, nome, cnpj, email, telefone, endereco, entrega, tipo){
         this._codigo = codigo;
         this._nome = nome;
         this._cnpj = cnpj;
@@ -7,6 +7,7 @@ export class LtdaModel{
         this._telefone = telefone;
         this._endereco = endereco;
         this._entrega = entrega;
+        this._tipo = tipo;
     }
 
     get codigo(){
@@ -30,19 +31,7 @@ export class LtdaModel{
     get entrega(){
         return this._entrega;
     }
-
-    criaObj(){
-        const obj = {
-            codigo: this._codigo,
-            nome: this._nome,
-            cnpj: this._cnpj,
-            email: this._email,
-            telefone: this._telefone,
-            endereco: this._endereco,
-            entrega: this._entrega,
-            tipo: 'transportadora'
-        }
-
-        return obj;
+    get tipo(){
+        return this._tipo;
     }
 }
